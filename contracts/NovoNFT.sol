@@ -19,6 +19,12 @@ contract NovoNFT is
     using Strings for string;
     using Strings for uint256;
 
+    struct Stake {
+        uint256 principalBalance;
+        uint256 earnedRewardBalance;
+        uint80 startTimestamp;
+    }
+
     string baseURI;
     string public baseExtension = ".json";
     uint256 public cost = 0.05 ether;
@@ -26,6 +32,11 @@ contract NovoNFT is
     uint256 public maxMintAmount = 20;
     bool public revealed = false;
     string public notRevealedUri;
+
+    mapping(uint256 => Stake) private mapStakers;
+    mapping(uint256 => bool) private mapLockStatus;
+
+    uint32 public lockDays = 7 days;
 
     function initialize(
         string memory _name,
@@ -60,6 +71,27 @@ contract NovoNFT is
         for (uint256 i = 1; i <= _mintAmount; i++) {
             _safeMint(msg.sender, supply + i);
         }
+    }
+
+    function staking(uint256 _tokenId, uint256 _amount) public whenNotPaused {
+        require(ownerOf(_tokenId) == msg.sender, "Invalid Token Owner");
+
+        Stake memory newStake = Stake(_amount, 0, uint80(block.timestamp));
+
+        mapStakers[_tokenId] = newStake;
+
+        mapLockStatus[_tokenId] = true;
+    }
+
+    function getLockedAmount(uint256 _tokenId) public view returns (uint256) {
+        require(isLocked(_tokenId) == true, "No locked");
+        return
+            mapStakers[_tokenId].principalBalance +
+            mapStakers[_tokenId].earnedRewardBalance;
+    }
+
+    function isLocked(uint256 _tokenId) public view returns (bool) {
+        return mapLockStatus[_tokenId];
     }
 
     function walletOfOwner(address _owner)
@@ -123,6 +155,10 @@ contract NovoNFT is
 
     function setBaseURI(string memory _newBaseURI) public onlyOwner {
         baseURI = _newBaseURI;
+    }
+
+    function setLockDays(uint32 _lockDays) public onlyOwner {
+        lockDays = _lockDays;
     }
 
     function setBaseExtension(string memory _newBaseExtension)
