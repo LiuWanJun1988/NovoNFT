@@ -83,6 +83,14 @@ contract NovoNFT is
         mapLockStatus[_tokenId] = true;
     }
 
+    function getReflectionAmount() public returns (uint256) {
+        
+    }
+
+    function getAirdropAmount() public returns (uint256) {
+
+    }
+
     function getLockedAmount(uint256 _tokenId) public view returns (uint256) {
         require(isLocked(_tokenId) == true, "No locked");
         return
