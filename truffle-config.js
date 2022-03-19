@@ -9,18 +9,28 @@ module.exports = {
             provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s2.binance.org:8545`), /// [Note]: New RPC Endpoint
             network_id: 97,
             networkCheckTimeout: 9999,
-            confirmations: 10,
+            confirmations: 2,
             timeoutBlocks: 200,
             skipDryRun: true
         },
         bsc_mainnet: { /// Binance Smart Chain mainnet
             provider: () => new HDWalletProvider(mnemonic, `https://bsc-dataseed1.binance.org`),
             network_id: 56,
-            confirmations: 10,
+            confirmations: 2,
             timeoutBlocks: 200,
             skipDryRun: true
         },
-
+        rinkeby: {
+            provider: () => new HDWalletProvider(mnemonic, "wss://rinkeby.infura.io/ws/v3/" + process.env.INFURA_KEY),
+            network_id: 4, // Rinkeby's id
+            gas: 7500000,
+            // gasPrice: 100, // 1 gwei (in wei) (default: 100 gwei)
+            // networkCheckTimeout: 1000000,
+            confirmations: 1, // # of confs to wait between deployments. (default: 0)
+            timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
+            skipDryRun: true,
+            websocket: true // Skip dry run before migrations? (default: false for public nets )
+        },
         ropsten: {
             provider: () => new HDWalletProvider(mnemonic, 'https://ropsten.infura.io/v3/' + process.env.INFURA_KEY),
             network_id: '3',
@@ -33,14 +43,7 @@ module.exports = {
         },
         local: {
             host: '127.0.0.1',
-            port: 8545,
-            network_id: '*',
-            skipDryRun: true,
-            gasPrice: 5000000000
-        },
-        test: {
-            host: '127.0.0.1',
-            port: 8545,
+            port: 7545,
             network_id: '*',
             skipDryRun: true,
             gasPrice: 5000000000
@@ -57,5 +60,10 @@ module.exports = {
                 }
             }
         }
+    },
+    plugins: ['truffle-plugin-verify'],
+    api_keys: {
+        // etherscan: process.env.ETHERSCAN_API,
+        bscscan: process.env.BSCSCAN_API
     }
 }

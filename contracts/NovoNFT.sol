@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.0;
 import "./Strings.sol";
-
+import "./INOVO.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
@@ -26,30 +26,33 @@ contract NovoNFT is
     }
 
     string baseURI;
-    string public baseExtension = ".json";
-    uint256 public cost = 0.05 ether;
-    uint256 public maxSupply = 10000;
-    uint256 public maxMintAmount = 20;
-    bool public revealed = false;
+    string public baseExtension;
+    uint256 public cost;
+    uint256 public maxSupply;
+    uint256 public maxMintAmount;
+    bool public revealed;
     string public notRevealedUri;
 
     mapping(uint256 => Stake) private mapStakers;
     mapping(uint256 => bool) private mapLockStatus;
 
-    uint32 public lockDays = 7 days;
+    INOVO public novo;
 
-    function initialize(
-        string memory _name,
-        string memory _symbol,
-        string memory _initBaseURI,
-        string memory _initNotRevealedUri
-    ) public virtual initializer {
+    uint32 public lockDays;
+
+    function initialize(address _novo) public virtual initializer {
         __Ownable_init();
         __Pausable_init();
-        __ERC721_init(_name, _symbol);
+        __ERC721_init("Novo Certificate of Stake", "NCOS");
 
-        setBaseURI(_initBaseURI);
-        setNotRevealedURI(_initNotRevealedUri);
+        novo = INOVO(_novo);
+
+        baseExtension = ".json";
+        cost = 0.05 ether;
+        maxSupply = 1000000000;
+        maxMintAmount = 20;
+        revealed = false;
+        lockDays = 7 days;
     }
 
     // internal
@@ -83,13 +86,9 @@ contract NovoNFT is
         mapLockStatus[_tokenId] = true;
     }
 
-    function getReflectionAmount() public returns (uint256) {
-        
-    }
+    function getReflectionAmount() public returns (uint256) {}
 
-    function getAirdropAmount() public returns (uint256) {
-
-    }
+    function getAirdropAmount() public returns (uint256) {}
 
     function getLockedAmount(uint256 _tokenId) public view returns (uint256) {
         require(isLocked(_tokenId) == true, "No locked");
