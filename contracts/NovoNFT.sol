@@ -20,8 +20,10 @@ contract NovoNFT is
     using Strings for uint256;
 
     struct Stake {
+        string stakerName;
         uint256 principalBalance;
-        uint256 earnedRewardBalance;
+        uint256 bagSizeReward;
+        uint256 stakingTimeReward;
         uint80 startTimestamp;
     }
 
@@ -76,25 +78,95 @@ contract NovoNFT is
         }
     }
 
-    function staking(uint256 _tokenId, uint256 _amount) public whenNotPaused {
+    function staking(
+        uint256 _tokenId,
+        uint256 _amount,
+        string memory _stakerName
+    ) public whenNotPaused {
         require(ownerOf(_tokenId) == msg.sender, "Invalid Token Owner");
 
-        Stake memory newStake = Stake(_amount, 0, uint80(block.timestamp));
+        Stake memory newStake = Stake(
+            _stakerName,
+            _amount,
+            0,
+            0,
+            uint80(block.timestamp)
+        );
 
         mapStakers[_tokenId] = newStake;
 
         mapLockStatus[_tokenId] = true;
     }
 
+    function unstaking(uint256 _tokenId) public {
+        require(ownerOf(_tokenId) == msg.sender, "Invalid Token Owner");
+        require(mapStakers[_tokenId].principalBalance > 0, "No staked address");
+        uint256 remainReward = mapStakers[_tokenId].bagSizeReward +
+            mapStakers[_tokenId].stakingTimeReward;
+        if (remainReward > 0) {
+            novo.transfer(
+                msg.sender,
+                mapStakers[_tokenId].bagSizeReward +
+                    mapStakers[_tokenId].stakingTimeReward
+            );
+        }
+
+        mapStakers[_tokenId].principalBalance = 0;
+        mapStakers[_tokenId].bagSizeReward = 0;
+        mapStakers[_tokenId].stakingTimeReward = 0;
+        delete mapStakers[_tokenId];
+    }
+
     function getReflectionAmount() public returns (uint256) {}
 
     function getAirdropAmount() public returns (uint256) {}
 
-    function getLockedAmount(uint256 _tokenId) public view returns (uint256) {
+    function getLockedAmountByAddress(address _address)
+        public
+        view
+        returns (uint256)
+    {
+        uint256 totalLockedAmount = 0;
+        uint256[] memory tokenIds = getTokenIds(_address);
+        for (uint256 i = 0; i < tokenIds.length; i++) {
+            totalLockedAmount += getLockedAmountByTokenId(tokenIds[i]);
+        }
+
+        return totalLockedAmount;
+    }
+
+    function getLockedAmountByTokenId(uint256 _tokenId)
+        public
+        view
+        returns (uint256)
+    {
         require(isLocked(_tokenId) == true, "No locked");
         return
             mapStakers[_tokenId].principalBalance +
-            mapStakers[_tokenId].earnedRewardBalance;
+            mapStakers[_tokenId].bagSizeReward +
+            mapStakers[_tokenId].stakingTimeReward;
+    }
+
+    function getTokenIds(address _owner)
+        public
+        view
+        returns (uint256[] memory)
+    {
+        uint256[] memory _tokensOfOwner = new uint256[](balanceOf(_owner));
+        uint256 i;
+
+        for (i = 0; i < balanceOf(_owner); i++) {
+            _tokensOfOwner[i] = tokenOfOwnerByIndex(_owner, i);
+        }
+        return (_tokensOfOwner);
+    }
+
+    function addBagSizeReward(uint256 tokenId, uint256 _amount) internal {
+        mapStakers[tokenId].bagSizeReward += _amount;
+    }
+
+    function addStakingTimeReward(uint256 tokenId, uint256 _amount) internal {
+        mapStakers[tokenId].stakingTimeReward += _amount;
     }
 
     function isLocked(uint256 _tokenId) public view returns (bool) {

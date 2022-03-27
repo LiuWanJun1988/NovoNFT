@@ -14,6 +14,16 @@
       "address": "0x1cB3610abE430eA0B1db7957E87154bD2F9A240B",
       "txHash": "0xba79a004b8eb576644233d098a690c9067f24d138b80dd402e83ea6ff69dbc8b",
       "kind": "transparent"
+    },
+    {
+      "address": "0x1C9Fb800b0Ca32B40F7F2D238172d5c2329A0068",
+      "txHash": "0xf1be6fac46097ec0437cb74621fd520297396ae113e0f45b3aae6f8142181a67",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xFCAf44CFA07eE5E9CAC757836A4C45787e284703",
+      "txHash": "0x585a1851c2da9a536da76b6d44df6a45215995377657b9819c67c6fcab1e4fbb",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -990,6 +1000,280 @@
           },
           "t_array(t_uint256)50_storage": {
             "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "650346bca4e7fbdc012c2ff8ac4ec0d5709ade4870ea69202427b6d741dab249": {
+      "address": "0xD978b9474D5B1D5c9a811481f5A05Be6C40AcCc1",
+      "txHash": "0x2bb93f9a6f69580e66013cb967e17922ba267e6a0f8b7a5e800b28f81c4c72a5",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:188"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:193"
+          },
+          {
+            "contract": "ContextSimpleUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:234"
+          },
+          {
+            "contract": "OwnableSafeUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:251"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "allStakes",
+            "type": "t_mapping(t_address,t_array(t_struct(Stake)4370_storage)dyn_storage)",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:310"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stakeCount",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:312"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stakerID",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:314"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stakers",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:316"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "cliff",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:318"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "vaultAvailableBalance",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:319"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "NOVO",
+            "type": "t_contract(IERC20)3922",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:326"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stackedRewards",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:328"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "totalStackedRewards",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:329"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_array(t_struct(Stake)4370_storage)dyn_storage)": {
+            "label": "mapping(address => struct NovoStaking.Stake[])"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_struct(Stake)4370_storage)dyn_storage": {
+            "label": "struct NovoStaking.Stake[]"
+          },
+          "t_struct(Stake)4370_storage": {
+            "label": "struct NovoStaking.Stake",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "startTimestamp",
+                "type": "t_uint40"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_uint40": {
+            "label": "uint40"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_contract(IERC20)3922": {
+            "label": "contract IERC20"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "c171df4a07f647dc05caf02212ee045ba6d56293b5bbe69d6eff39391147b00f": {
+      "address": "0x3c775212011e9Fff8d26390f739Fe4ff84B3eb5A",
+      "txHash": "0x05442e66c8dd2af1e18bf1b4ada34aaf6e74498586224c13adc33cd5a5354e5c",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:188"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:193"
+          },
+          {
+            "contract": "ContextSimpleUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:234"
+          },
+          {
+            "contract": "OwnableSafeUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:251"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "allStakes",
+            "type": "t_mapping(t_address,t_array(t_struct(Stake)4370_storage)dyn_storage)",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:310"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stakeCount",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:312"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stakerID",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:314"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stakers",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:316"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "cliff",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:318"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "vaultAvailableBalance",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:319"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "NOVO",
+            "type": "t_contract(IERC20)3922",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:326"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "stackedRewards",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:328"
+          },
+          {
+            "contract": "NovoStaking",
+            "label": "totalStackedRewards",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoStaking.sol:329"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_array(t_struct(Stake)4370_storage)dyn_storage)": {
+            "label": "mapping(address => struct NovoStaking.Stake[])"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_struct(Stake)4370_storage)dyn_storage": {
+            "label": "struct NovoStaking.Stake[]"
+          },
+          "t_struct(Stake)4370_storage": {
+            "label": "struct NovoStaking.Stake",
+            "members": [
+              {
+                "label": "amount",
+                "type": "t_uint256"
+              },
+              {
+                "label": "startTimestamp",
+                "type": "t_uint40"
+              }
+            ]
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_uint40": {
+            "label": "uint40"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_contract(IERC20)3922": {
+            "label": "contract IERC20"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_bool": {
+            "label": "bool"
           }
         }
       }
