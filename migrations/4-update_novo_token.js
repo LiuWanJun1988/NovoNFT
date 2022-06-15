@@ -1,8 +1,8 @@
 const { upgradeProxy } = require('@openzeppelin/truffle-upgrades');
 
-const NovoNFT = artifacts.require('NovoNFT');
+const NOVOV2 = artifacts.require('NOVOV2');
 
 module.exports = async function(deployer) {
-    const instance = await upgradeProxy("0xEC79F308585FDc8b27A9Bb77B1F586d82c2a887b", NovoNFT, { deployer });
+    const instance = await upgradeProxy("0x25DCfa762Ae0fD3dE794F6E01Fdd2F98bbC33a85", NOVOV2, { deployer });
     console.log("Upgraded", instance.address);
 };
