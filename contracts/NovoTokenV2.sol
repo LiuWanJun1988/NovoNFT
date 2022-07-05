@@ -121,16 +121,16 @@ contract NOVOV2 is
         _;
     }
 
-    function initialize(address _router, address _stakingPool)
+    function initialize(address _router)
         public
         initializer
     {
         __Context_init_unchained();
         __Ownable_init_unchained();
-        __NOVO_init_unchained(_router, _stakingPool);
+        __NOVO_init_unchained(_router);
     }
 
-    function __NOVO_init_unchained(address _router, address _stakingPool)
+    function __NOVO_init_unchained(address _router)
         internal
         initializer
     {
@@ -159,8 +159,7 @@ contract NOVOV2 is
         numTokensSellToAddToTreasury = 10**5 * 10**9;
 
         _burnAddress = 0x000000000000000000000000000000000000dEaD;
-        _treasuryAddress = 0x927A100BCB00553138C6CFA22A4d3A8dbe1156D7; // test net
-        _stakingPoolAddress = _stakingPool;
+        _treasuryAddress = 0x927A100BCB00553138C6CFA22A4d3A8dbe1156D7;
         
         _rOwned[_msgSender()] = _rTotal;
 
