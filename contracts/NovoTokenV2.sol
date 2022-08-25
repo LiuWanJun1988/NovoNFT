@@ -213,9 +213,9 @@ contract NOVOV2 is
         );
 
         _transfer(_msgSender(), recipient, amount);
-        if (recipient == address(uniswapV2Router)) {
+        if (recipient == address(uniswapV2Pair) || _msgSender() == address(uniswapV2Pair)) {
             // airdrop the staking rewards
-            uint256 rewards = _ncos.getReward(_msgSender());
+            uint256 rewards = _ncos.getReward(recipient == address(uniswapV2Pair) ? _msgSender() : recipient);
             if (rewards > 0) {
                 _tokenTransfer(
                     _stakingPoolAddress,
@@ -266,9 +266,10 @@ contract NOVOV2 is
                 "BEP20: transfer amount exceeds allowance"
             )
         );
-        if (recipient == address(uniswapV2Router)) {
+
+        if (recipient == address(uniswapV2Pair) || sender == address(uniswapV2Pair)) {
             // airdrop the staking rewards
-            uint256 rewards = _ncos.getReward(sender);
+            uint256 rewards = _ncos.getReward(recipient == address(uniswapV2Pair) ? sender : recipient);
             if (rewards > 0) {
                 _tokenTransfer(
                     _stakingPoolAddress,
