@@ -1277,6 +1277,1884 @@
           }
         }
       }
+    },
+    "e5b4b4c945b239a854e5908bf72b3417b38d228a3f32b3a7e3f885c5059969eb": {
+      "address": "0x17b04a9a2154b7328fb096D828afd1222e245947",
+      "txHash": "0xccab6bf93e51b360593c6dfa3774c2ff2d3ca4fdcbf6082b428163cfe512b831",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:43"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:44"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:45"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromFee",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:46"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcluded",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:47"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isBlacklisted",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:48"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isSwap",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:49"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_excluded",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:51"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:54"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:55"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_targetSupply",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:56"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tFeeTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:57"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:59"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:60"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:61"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_swapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:63"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousSwapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:64"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_transferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:65"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousTransferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:66"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Router",
+            "type": "t_contract(IUniswapV2Router02)3395",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:68"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_ncos",
+            "type": "t_contract(NovoNFT)4992",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:69"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Pair",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:70"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:71"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:72"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_stakingPoolAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:73"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "inSwapAndLiquify",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:75"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "swapAndLiquifyEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:76"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_maxTxAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:78"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryStackedAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:79"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToLiquidity",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:80"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToTreasury",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:81"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnStopped",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:83"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_canTrade",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:84"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_upgraded",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:85"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "launchTime",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:86"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_struct(Fee)5027_storage": {
+            "label": "struct NOVOV2.Fee",
+            "members": [
+              {
+                "label": "_stakingFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_liquidityFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_burnFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_treasuryFee",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_contract(IUniswapV2Router02)3395": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(NovoNFT)4992": {
+            "label": "contract NovoNFT"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "af2edbbe3eaddd6598107ad71c29bf946e238e5ab48be46e04b39e1d476db584": {
+      "address": "0xAC4B31c5c0bFD26b9a9FAfb632616B648341584E",
+      "txHash": "0x8026005dfd62058deee53aa9e8036f55b88fdff0750ccc078c95c1447e41ad4f",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:43"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:44"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:45"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromFee",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:46"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcluded",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:47"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isBlacklisted",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:48"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isSwap",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:49"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_excluded",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:51"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:54"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:55"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_targetSupply",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:56"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tFeeTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:57"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:59"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:60"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:61"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_swapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:63"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousSwapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:64"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_transferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:65"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousTransferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:66"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Router",
+            "type": "t_contract(IUniswapV2Router02)3395",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:68"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_ncos",
+            "type": "t_contract(NovoNFT)4992",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:69"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Pair",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:70"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:71"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:72"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_stakingPoolAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:73"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "inSwapAndLiquify",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:75"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "swapAndLiquifyEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:76"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_maxTxAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:78"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryStackedAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:79"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToLiquidity",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:80"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToTreasury",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:81"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnStopped",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:83"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_canTrade",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:84"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_upgraded",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:85"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "launchTime",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:86"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_struct(Fee)5027_storage": {
+            "label": "struct NOVOV2.Fee",
+            "members": [
+              {
+                "label": "_stakingFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_liquidityFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_burnFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_treasuryFee",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_contract(IUniswapV2Router02)3395": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(NovoNFT)4992": {
+            "label": "contract NovoNFT"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "38eb144ee67bd2a75dcecb2a7763ccdd0bd6d5d4bfce1063a25225a181e5d8f5": {
+      "address": "0x0127909F9C671825D8B272cA83114e757eb37Bfa",
+      "txHash": "0x5c099c498e298b435600f72c972fffafc8e6ce6fd84fd973a7401467f58b0e3a",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:43"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:44"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:45"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromFee",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:46"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcluded",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:47"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isBlacklisted",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:48"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isSwap",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:49"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_excluded",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:51"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:54"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:55"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_targetSupply",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:56"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tFeeTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:57"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:59"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:60"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:61"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_swapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:63"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousSwapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:64"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_transferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:65"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousTransferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:66"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Router",
+            "type": "t_contract(IUniswapV2Router02)3395",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:68"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_ncos",
+            "type": "t_contract(NovoNFT)4992",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:69"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Pair",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:70"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:71"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:72"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_stakingPoolAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:73"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "inSwapAndLiquify",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:75"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "swapAndLiquifyEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:76"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_maxTxAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:78"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryStackedAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:79"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToLiquidity",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:80"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToTreasury",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:81"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnStopped",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:83"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_canTrade",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:84"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_upgraded",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:85"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "launchTime",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:86"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_struct(Fee)5027_storage": {
+            "label": "struct NOVOV2.Fee",
+            "members": [
+              {
+                "label": "_stakingFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_liquidityFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_burnFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_treasuryFee",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_contract(IUniswapV2Router02)3395": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(NovoNFT)4992": {
+            "label": "contract NovoNFT"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "585f56585d2c2f374f2996a87854075aadc2c66b8a1a66e9458184489ef29ad7": {
+      "address": "0x023f60f9a1CCDc2ad6d0Eb6997C20f4F0F19323b",
+      "txHash": "0x84ca1ab5fdccbfceb9a98e46a15a9e38dc0f34d4c412dc3b8722eb3456314b0e",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:43"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:44"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:45"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromFee",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:46"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcluded",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:47"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isBlacklisted",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:48"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isSwap",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:49"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_excluded",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:51"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:54"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:55"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_targetSupply",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:56"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tFeeTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:57"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:59"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:60"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:61"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_swapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:63"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousSwapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:64"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_transferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:65"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousTransferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:66"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Router",
+            "type": "t_contract(IUniswapV2Router02)3395",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:68"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_ncos",
+            "type": "t_contract(NovoNFT)4992",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:69"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Pair",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:70"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:71"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:72"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_stakingPoolAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:73"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "inSwapAndLiquify",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:75"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "swapAndLiquifyEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:76"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_maxTxAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:78"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryStackedAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:79"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToLiquidity",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:80"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToTreasury",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:81"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnStopped",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:83"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_canTrade",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:84"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_upgraded",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:85"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "launchTime",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:86"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_struct(Fee)5027_storage": {
+            "label": "struct NOVOV2.Fee",
+            "members": [
+              {
+                "label": "_stakingFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_liquidityFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_burnFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_treasuryFee",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_contract(IUniswapV2Router02)3395": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(NovoNFT)4992": {
+            "label": "contract NovoNFT"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "801339fc116db728d661aa8432977ebc483923e6dc9e69d7b3e92dbb4adb2720": {
+      "address": "0x14132Fb4C4FAc52aE32b1b54B37B9389761B5926",
+      "txHash": "0x847b2343d0169f422477d8167549cf72ad691a3146be855bebe62958cf75e20a",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:43"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:44"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:45"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromFee",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:46"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcluded",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:47"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isBlacklisted",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:48"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isSwap",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:49"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_excluded",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:51"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:54"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:55"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_targetSupply",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:56"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tFeeTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:57"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:59"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:60"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:61"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_swapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:63"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousSwapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:64"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_transferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:65"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousTransferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:66"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Router",
+            "type": "t_contract(IUniswapV2Router02)3395",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:68"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_ncos",
+            "type": "t_contract(NovoNFT)4992",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:69"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Pair",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:70"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:71"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:72"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_stakingPoolAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:73"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "inSwapAndLiquify",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:75"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "swapAndLiquifyEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:76"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_maxTxAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:78"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryStackedAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:79"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToLiquidity",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:80"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToTreasury",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:81"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnStopped",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:83"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_canTrade",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:84"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_upgraded",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:85"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "launchTime",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:86"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_struct(Fee)5027_storage": {
+            "label": "struct NOVOV2.Fee",
+            "members": [
+              {
+                "label": "_stakingFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_liquidityFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_burnFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_treasuryFee",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_contract(IUniswapV2Router02)3395": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(NovoNFT)4992": {
+            "label": "contract NovoNFT"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
+    },
+    "4fd92c57147d99d210a81d754b7885883b74dcc89f07d43412b43e6249e9bdbe": {
+      "address": "0xB55031695f84b714e1F12684bE0C296D384A034d",
+      "txHash": "0x411a68239961d3b8c1715b48e580088fd1d2cf7dd455413d84463cea8456325a",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\proxy\\utils\\Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\utils\\ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "..\\@openzeppelin\\contracts-upgradeable\\access\\OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:43"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tOwned",
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:44"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_allowances",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:45"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromFee",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:46"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcluded",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:47"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isBlacklisted",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:48"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isSwap",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:49"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_excluded",
+            "type": "t_array(t_address)dyn_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:51"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:54"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_rTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:55"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_targetSupply",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:56"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_tFeeTotal",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:57"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_name",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:59"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_symbol",
+            "type": "t_string_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:60"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_decimals",
+            "type": "t_uint8",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:61"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_swapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:63"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousSwapFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:64"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_transferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:65"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_previousTransferFee",
+            "type": "t_struct(Fee)5027_storage",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:66"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Router",
+            "type": "t_contract(IUniswapV2Router02)3395",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:68"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_ncos",
+            "type": "t_contract(NovoNFT)4992",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:69"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "uniswapV2Pair",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:70"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:71"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:72"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_stakingPoolAddress",
+            "type": "t_address",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:73"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "inSwapAndLiquify",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:75"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "swapAndLiquifyEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:76"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_maxTxAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:78"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_treasuryStackedAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:79"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToLiquidity",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:80"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "numTokensSellToAddToTreasury",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:81"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_burnStopped",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:83"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_canTrade",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:84"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_upgraded",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:85"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "launchTime",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:86"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_antiWhaleAmount",
+            "type": "t_uint256",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:88"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "_isExcludedFromAntiWhale",
+            "type": "t_mapping(t_address,t_bool)",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:89"
+          },
+          {
+            "contract": "NOVOV2",
+            "label": "antiWhaleEnabled",
+            "type": "t_bool",
+            "src": "..\\project:\\contracts\\NovoTokenV2.sol:90"
+          }
+        ],
+        "types": {
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)"
+          },
+          "t_bool": {
+            "label": "bool"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]"
+          },
+          "t_string_storage": {
+            "label": "string"
+          },
+          "t_uint8": {
+            "label": "uint8"
+          },
+          "t_struct(Fee)5027_storage": {
+            "label": "struct NOVOV2.Fee",
+            "members": [
+              {
+                "label": "_stakingFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_liquidityFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_burnFee",
+                "type": "t_uint256"
+              },
+              {
+                "label": "_treasuryFee",
+                "type": "t_uint256"
+              }
+            ]
+          },
+          "t_contract(IUniswapV2Router02)3395": {
+            "label": "contract IUniswapV2Router02"
+          },
+          "t_contract(NovoNFT)4992": {
+            "label": "contract NovoNFT"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          }
+        }
+      }
     }
   }
 }

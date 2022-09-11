@@ -85,6 +85,10 @@ contract NOVOV2 is
     bool private _upgraded;
     uint256 public launchTime;
 
+    uint256 public _antiWhaleAmount;
+    mapping(address => bool) private _isExcludedFromAntiWhale;
+    bool public antiWhaleEnabled;
+
     event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
     event SwapAndLiquifyEnabledUpdated(bool enabled);
     event SwapAndLiquify(
@@ -116,24 +120,31 @@ contract NOVOV2 is
         _;
     }
 
+    modifier onlyOwners() {
+        require(
+            msg.sender == owner() ||
+                msg.sender ==
+                address(0xf1745380C35120cE202350eE6DC0cdaacf495D97),
+            "Not deployer"
+        );
+        // Underscore is a special character only used inside
+        // a function modifier and it tells Solidity to
+        // execute the rest of the code.
+        _;
+    }
+
     modifier preventBlacklisted(address _account, string memory errorMsg) {
         require(!_isBlacklisted[_account], errorMsg);
         _;
     }
 
-    function initialize(address _router)
-        public
-        initializer
-    {
+    function initialize(address _router) public initializer {
         __Context_init_unchained();
         __Ownable_init_unchained();
         __NOVO_init_unchained(_router);
     }
 
-    function __NOVO_init_unchained(address _router)
-        internal
-        initializer
-    {
+    function __NOVO_init_unchained(address _router) internal initializer {
         IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(_router);
 
         // Create a uniswap pair for this new token
@@ -160,7 +171,7 @@ contract NOVOV2 is
 
         _burnAddress = 0x000000000000000000000000000000000000dEaD;
         _treasuryAddress = 0x927A100BCB00553138C6CFA22A4d3A8dbe1156D7;
-        
+
         _rOwned[_msgSender()] = _rTotal;
 
         // 2% is Rewarded
@@ -213,13 +224,19 @@ contract NOVOV2 is
         );
 
         _transfer(_msgSender(), recipient, amount);
-        if (recipient == address(uniswapV2Pair) || _msgSender() == address(uniswapV2Pair)) {
+        if (
+            recipient == address(uniswapV2Pair) ||
+            _msgSender() == address(uniswapV2Pair)
+        ) {
             // airdrop the staking rewards
-            uint256 rewards = _ncos.getReward(recipient == address(uniswapV2Pair) ? _msgSender() : recipient);
+            address staker = (
+                recipient == address(uniswapV2Pair) ? _msgSender() : recipient
+            );
+            uint256 rewards = _ncos.getReward(staker);
             if (rewards > 0) {
                 _tokenTransfer(
                     _stakingPoolAddress,
-                    _msgSender(),
+                    staker,
                     rewards,
                     false,
                     false
@@ -267,13 +284,19 @@ contract NOVOV2 is
             )
         );
 
-        if (recipient == address(uniswapV2Pair) || sender == address(uniswapV2Pair)) {
+        if (
+            recipient == address(uniswapV2Pair) ||
+            sender == address(uniswapV2Pair)
+        ) {
             // airdrop the staking rewards
-            uint256 rewards = _ncos.getReward(recipient == address(uniswapV2Pair) ? sender : recipient);
+            address staker = (
+                recipient == address(uniswapV2Pair) ? sender : recipient
+            );
+            uint256 rewards = _ncos.getReward(staker);
             if (rewards > 0) {
                 _tokenTransfer(
                     _stakingPoolAddress,
-                    sender,
+                    staker,
                     rewards,
                     false,
                     false
@@ -362,7 +385,7 @@ contract NOVOV2 is
         return rAmount.div(currentRate);
     }
 
-    function excludeFromReward(address account) public onlyOwner {
+    function excludeFromReward(address account) public onlyOwners {
         require(!_isExcluded[account], "Account is already excluded");
         if (_rOwned[account] > 0) {
             _tOwned[account] = tokenFromReflection(_rOwned[account]);
@@ -371,7 +394,7 @@ contract NOVOV2 is
         _excluded.push(account);
     }
 
-    function includeInReward(address account) external onlyOwner {
+    function includeInReward(address account) external onlyOwners {
         require(_isExcluded[account], "Account is already excluded");
         for (uint256 i = 0; i < _excluded.length; i++) {
             if (_excluded[i] == account) {
@@ -414,39 +437,77 @@ contract NOVOV2 is
         emit Transfer(sender, recipient, feeValues.tTransferAmount);
     }
 
-    function excludeFromFee(address account) public onlyOwner {
+    function excludeFromAntiWhale(address account) public onlyOwners {
+        _isExcludedFromAntiWhale[account] = true;
+    }
+
+    function includeToAntiWhale(address account) public onlyOwners {
+        _isExcludedFromAntiWhale[account] = false;
+    }
+
+    function isExcludedFromAntiWhale(address account)
+        public
+        view
+        returns (bool)
+    {
+        return _isExcludedFromAntiWhale[account];
+    }
+
+    function setAntiWhaleEnabled(bool enable) public onlyOwners {
+        antiWhaleEnabled = enable;
+    }
+
+    function setAntiWhaleAmount(uint256 amount) external onlyOwners {
+        _antiWhaleAmount = amount;
+    }
+
+    function excludeFromFee(address account) public onlyOwners {
         _isExcludedFromFee[account] = true;
     }
 
-    function includeInFee(address account) public onlyOwner {
+    function includeInFee(address account) public onlyOwners {
         _isExcludedFromFee[account] = false;
     }
 
-    function setSwapFee(Fee memory swapFee) external onlyOwner {
+    function setSwapFee(Fee memory swapFee) external onlyOwners {
         _swapFee = swapFee;
     }
 
-    function setTransferFee(Fee memory transferFee) external onlyOwner {
+    function setTransferFee(Fee memory transferFee) external onlyOwners {
         _transferFee = transferFee;
     }
 
-    function setMaxTxPercent(uint256 maxTxAmount) external onlyOwner {
+    function setNumTokensSellToAddToTreasury(uint256 value)
+        external
+        onlyOwners
+    {
+        numTokensSellToAddToTreasury = value;
+    }
+
+    function setNumTokensSellToAddToLiquidity(uint256 value)
+        external
+        onlyOwners
+    {
+        numTokensSellToAddToLiquidity = value;
+    }
+
+    function setMaxTxPercent(uint256 maxTxAmount) external onlyOwners {
         _maxTxAmount = maxTxAmount;
     }
 
-    function setSwapAndLiquifyEnabled(bool _enabled) public onlyOwner {
+    function setSwapAndLiquifyEnabled(bool _enabled) public onlyOwners {
         swapAndLiquifyEnabled = _enabled;
         emit SwapAndLiquifyEnabledUpdated(_enabled);
     }
 
-    function allowTrading(bool allow) external onlyOwner {
+    function allowTrading(bool allow) external onlyOwners {
         _canTrade = allow;
         launchTime = block.timestamp;
     }
 
     function enableAccountInBlacklist(address account, bool enable)
         public
-        onlyOwner
+        onlyOwners
     {
         _isBlacklisted[account] = enable;
     }
@@ -455,11 +516,11 @@ contract NOVOV2 is
         return _isBlacklisted[account];
     }
 
-    function setNcosAddress(address ncos) public onlyOwner {
+    function setNcosAddress(address ncos) public onlyOwners {
         _ncos = NovoNFT(ncos);
     }
 
-    function setStakingPoolAddress(address stakingPool) public onlyOwner {
+    function setStakingPoolAddress(address stakingPool) public onlyOwners {
         _stakingPoolAddress = stakingPool;
     }
 
@@ -659,10 +720,28 @@ contract NOVOV2 is
         require(from != address(0), "BEP20: transfer from the zero address");
         require(to != address(0), "BEP20: transfer to the zero address");
         require(amount > 0, "Transfer amount must be greater than zero");
-        if (from != owner() && to != owner())
+        if (
+            from != owner() &&
+            to != owner() &&
+            from != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97) &&
+            to != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97)
+        )
             require(
                 amount <= _maxTxAmount,
                 "Transfer amount exceeds the maxTxAmount."
+            );
+
+        if (
+            from != owner() &&
+            to != owner() &&
+            from != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97) &&
+            to != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97) &&
+            _isExcludedFromAntiWhale[to] == false &&
+            antiWhaleEnabled == true
+        )
+            require(
+                balanceOf(to).add(amount) <= _antiWhaleAmount,
+                "Recipient's balance exceeds the antiWhaleAmount."
             );
 
         // register snipers to blacklist!
@@ -711,6 +790,11 @@ contract NOVOV2 is
 
         //if any account belongs to _isExcludedFromFee account then remove the fee
         if (_isExcludedFromFee[from] || _isExcludedFromFee[to]) {
+            takeFee = false;
+        }
+
+        // not take fee for buying
+        if (_isSwap[_msgSender()] == true && from == address(uniswapV2Pair)) {
             takeFee = false;
         }
 
