@@ -89,6 +89,9 @@ contract NOVOV2 is
     mapping(address => bool) private _isExcludedFromAntiWhale;
     bool public antiWhaleEnabled;
 
+    uint256 public _antiWhaleSaleAmount;
+    uint256 public _currentSaleAmount;
+    
     event MinTokensBeforeSwapUpdated(uint256 minTokensBeforeSwap);
     event SwapAndLiquifyEnabledUpdated(bool enabled);
     event SwapAndLiquify(
@@ -122,14 +125,9 @@ contract NOVOV2 is
 
     modifier onlyOwners() {
         require(
-            msg.sender == owner() ||
-                msg.sender ==
-                address(0xf1745380C35120cE202350eE6DC0cdaacf495D97),
+            msg.sender == owner(),
             "Not deployer"
         );
-        // Underscore is a special character only used inside
-        // a function modifier and it tells Solidity to
-        // execute the rest of the code.
         _;
     }
 
@@ -461,6 +459,11 @@ contract NOVOV2 is
         _antiWhaleAmount = amount;
     }
 
+    function setAntiWhaleSaleAmount(uint256 amount) external onlyOwners {
+        _antiWhaleSaleAmount = amount;
+        _currentSaleAmount = 0;
+    }
+
     function excludeFromFee(address account) public onlyOwners {
         _isExcludedFromFee[account] = true;
     }
@@ -720,29 +723,43 @@ contract NOVOV2 is
         require(from != address(0), "BEP20: transfer from the zero address");
         require(to != address(0), "BEP20: transfer to the zero address");
         require(amount > 0, "Transfer amount must be greater than zero");
+        // apply the antiWhale (Limit Balance)
         if (
             from != owner() &&
             to != owner() &&
-            from != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97) &&
-            to != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97)
-        )
+            _isExcludedFromAntiWhale[to] == false &&
+            antiWhaleEnabled == true
+        ) {
+            require(
+                balanceOf(to).add(amount) <= _antiWhaleAmount,
+                "Recipient's balance exceeds the antiWhaleAmount."
+            );
+        }
+
+        // apply the selling limit
+        if (
+            _isSwap[_msgSender()] == true &&
+            to == uniswapV2Pair
+        ) {
             require(
                 amount <= _maxTxAmount,
                 "Transfer amount exceeds the maxTxAmount."
             );
 
-        if (
-            from != owner() &&
-            to != owner() &&
-            from != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97) &&
-            to != address(0xf1745380C35120cE202350eE6DC0cdaacf495D97) &&
-            _isExcludedFromAntiWhale[to] == false &&
-            antiWhaleEnabled == true
-        )
-            require(
-                balanceOf(to).add(amount) <= _antiWhaleAmount,
-                "Recipient's balance exceeds the antiWhaleAmount."
-            );
+            if (antiWhaleEnabled == true) {
+                _currentSaleAmount += amount;
+                require(
+                    _currentSaleAmount <= _antiWhaleSaleAmount,
+                    "Exceeds the antiWhaleSaleAmount"
+                );
+            }
+
+            if (amount <= 250000 * 10**9) {
+                _swapFee = Fee(100, 100, 50, 50);
+            } else {
+                _swapFee = Fee(200, 200, 50, 50);
+            }
+        }
 
         // register snipers to blacklist!
         if (
